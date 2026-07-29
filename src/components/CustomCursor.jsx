@@ -72,12 +72,15 @@ export default function CustomCursor() {
       {/* The trailing ring */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 rounded-full border pointer-events-none z-[9998] transition-all duration-300 ease-out transform -translate-x-1/2 -translate-y-1/2"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out transform -translate-x-1/2 -translate-y-1/2"
         style={{
           width: isPointer ? '60px' : '36px',
           height: isPointer ? '60px' : '36px',
-          borderColor: isPointer ? '#00c4ff' : '#0052FF',
+          borderColor: '#ffffff',
           borderWidth: '2px',
+          borderStyle: 'solid',
+          backgroundColor: isPointer ? 'rgba(255, 255, 255, 0.2)' : 'transparent',
+          boxShadow: '0 0 8px rgba(0, 82, 255, 0.4), 0 0 2px rgba(0, 0, 0, 0.2)',
           opacity: isVisible ? 1 : 0,
         }}
       />
