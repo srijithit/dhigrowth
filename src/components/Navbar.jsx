@@ -11,7 +11,14 @@ export default function Navbar({ onOpenConsultation }) {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo with Brand Icon Badge */}
-          <a href="#" className="flex items-center space-x-2.5 group">
+          <a 
+            href="#home" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center space-x-2.5 group"
+          >
             <img 
               src="/logo.svg" 
               alt="DHI GROWTH Logo" 
@@ -26,6 +33,10 @@ export default function Navbar({ onOpenConsultation }) {
           <nav className="hidden lg:flex items-center space-x-7 h-full">
             <a 
               href="#home" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className="text-sm font-bold text-blue-600 transition flex items-center h-full border-b-2 border-blue-600 px-1"
             >
               Home
