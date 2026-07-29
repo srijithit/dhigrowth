@@ -95,7 +95,7 @@ export default function Hero({ onOpenConsultation }) {
                   {/* 5 Spoke Connector Lines with Blue Arrow Dots pointing outward to the nodes */}
                   
                   {/* Spoke 1: Top (Web Development) */}
-                  <line x1="250" y1="195" x2="250" y2="115" stroke="#0052FF" strokeWidth="2.5" markerEnd="url(#blueDot)" />
+                  <line x1="250" y1="195" x2="250" y2="135" stroke="#0052FF" strokeWidth="2.5" markerEnd="url(#blueDot)" />
 
                   {/* Spoke 2: Top Right (Mobile App Development) */}
                   <line x1="295" y1="215" x2="365" y2="160" stroke="#0052FF" strokeWidth="2.5" markerEnd="url(#blueDot)" />
@@ -120,7 +120,7 @@ export default function Hero({ onOpenConsultation }) {
                 {/* 5 Circular Nodes matching exact positions and labels in reference screenshot */}
 
                 {/* Node 1: Top Center - WEB DEVELOPMENT */}
-                <div className="absolute top-4 flex flex-col items-center">
+                <div className="absolute top-9 flex flex-col items-center">
                   <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-105">
                     <Monitor className="w-8 h-8 text-blue-600" />
                   </div>
