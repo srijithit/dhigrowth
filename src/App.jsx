@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import ConsultationModal from './components/ConsultationModal';
 import ServiceDetailModal from './components/ServiceDetailModal';
 import CustomCursor from './components/CustomCursor';
+import AiChatbot from './components/AiChatbot';
 
 export default function App() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
@@ -41,6 +42,9 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating AI Chatbot Widget */}
+      <AiChatbot onOpenConsultation={() => setIsConsultationOpen(true)} />
 
       {/* Consultation Request Modal */}
       <ConsultationModal 
