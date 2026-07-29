@@ -5,6 +5,19 @@ export default function Navbar({ onOpenConsultation }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
 
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    if (id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,10 +26,7 @@ export default function Navbar({ onOpenConsultation }) {
           {/* Logo with Brand Icon Badge */}
           <a 
             href="#home" 
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onClick={(e) => scrollToSection(e, 'home')}
             className="flex items-center space-x-2.5 group"
           >
             <img 
@@ -33,10 +43,7 @@ export default function Navbar({ onOpenConsultation }) {
           <nav className="hidden lg:flex items-center space-x-7 h-full">
             <a 
               href="#home" 
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
+              onClick={(e) => scrollToSection(e, 'home')}
               className="text-sm font-bold text-blue-600 transition flex items-center h-full border-b-2 border-blue-600 px-1"
             >
               Home
@@ -50,6 +57,7 @@ export default function Navbar({ onOpenConsultation }) {
             >
               <a 
                 href="#services"
+                onClick={(e) => scrollToSection(e, 'services')}
                 className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-blue-600 transition h-full border-b-2 border-transparent hover:border-blue-600 group-hover:text-blue-600 px-1"
               >
                 <span>Services</span>
@@ -60,22 +68,22 @@ export default function Navbar({ onOpenConsultation }) {
                 <div 
                   className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-2xl border border-slate-100 py-3 z-50 animate-fadeIn"
                 >
-                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     Website Development
                   </a>
-                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     Application Development
                   </a>
-                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     AI Automation & ML Models
                   </a>
-                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     Digital Marketing & SEO
                   </a>
-                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     WhatsApp & Paid Ads
                   </a>
-                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     Ads Shooting & Video Editing
                   </a>
                 </div>
@@ -84,6 +92,7 @@ export default function Navbar({ onOpenConsultation }) {
 
             <a 
               href="#about" 
+              onClick={(e) => scrollToSection(e, 'about')}
               className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full border-b-2 border-transparent hover:border-blue-600 px-1"
             >
               About Us
@@ -91,6 +100,7 @@ export default function Navbar({ onOpenConsultation }) {
 
             <a 
               href="#work" 
+              onClick={(e) => scrollToSection(e, 'work')}
               className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full border-b-2 border-transparent hover:border-blue-600 px-1"
             >
               Our Work
@@ -98,6 +108,7 @@ export default function Navbar({ onOpenConsultation }) {
 
             <a 
               href="#industries" 
+              onClick={(e) => scrollToSection(e, 'industries')}
               className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full border-b-2 border-transparent hover:border-blue-600 px-1"
             >
               Industries
@@ -105,6 +116,7 @@ export default function Navbar({ onOpenConsultation }) {
 
             <a 
               href="#blog" 
+              onClick={(e) => scrollToSection(e, 'blog')}
               className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full border-b-2 border-transparent hover:border-blue-600 px-1"
             >
               Blog
@@ -112,6 +124,7 @@ export default function Navbar({ onOpenConsultation }) {
 
             <a 
               href="#contact" 
+              onClick={(e) => scrollToSection(e, 'contact')}
               className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full border-b-2 border-transparent hover:border-blue-600 px-1"
             >
               Contact Us
