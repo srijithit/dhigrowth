@@ -75,7 +75,7 @@ export default function AiChatbot({ onOpenConsultation }) {
           className="relative group flex items-center space-x-2.5 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3.5 rounded-full shadow-2xl hover:scale-105 transition duration-300 border-2 border-white/20 animate-pulse-glow"
         >
           <div className="relative">
-            <Bot className="w-6 h-6" />
+            <img src="/logo.svg" alt="DhiGrowth AI" className="w-6 h-6 object-contain" />
             <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-blue-600 animate-ping"></span>
             <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-blue-600"></span>
           </div>
@@ -92,8 +92,8 @@ export default function AiChatbot({ onOpenConsultation }) {
           {/* Chat Header */}
           <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 p-4 text-white flex items-center justify-between shadow-md">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                <Bot className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 p-1">
+                <img src="/logo.svg" alt="DhiGrowth AI Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h4 className="text-sm font-extrabold flex items-center space-x-1.5">
