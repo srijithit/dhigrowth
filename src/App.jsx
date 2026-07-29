@@ -7,6 +7,7 @@ import ServicesGrid from './components/ServicesGrid';
 import WhyChooseUs from './components/WhyChooseUs';
 import ProcessSection from './components/ProcessSection';
 import IndustriesSection from './components/IndustriesSection';
+import BlogSection from './components/BlogSection';
 import Testimonials from './components/Testimonials';
 import CtaBanner from './components/CtaBanner';
 import Footer from './components/Footer';
@@ -33,6 +34,7 @@ export default function App() {
         <WhyChooseUs />
         <ProcessSection />
         <IndustriesSection />
+        <BlogSection />
         <Testimonials />
         <CtaBanner onOpenConsultation={() => setIsConsultationOpen(true)} />
       </main>
