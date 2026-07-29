@@ -17,11 +17,12 @@ export default function Hero({ onOpenConsultation }) {
           <div className="lg:col-span-6 space-y-6 text-left py-4">
             
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-[44px] font-black text-black leading-[1.12] tracking-tight">
+            <h1 className="font-condensed text-4xl sm:text-5xl md:text-[54px] font-bold text-black leading-[1.05] tracking-wide uppercase">
               COIMBATORE’S LEADING <br />
               DIGITAL GROWTH PARTNER — <br />
-              <span className="text-blue-600 shimmer-text">
-                WEB, APP, AI & MARKETING SOLUTIONS
+              <span className="text-blue-600">
+                WEB, APP, AI & MARKETING <br />
+                SOLUTIONS
               </span>
             </h1>
 
