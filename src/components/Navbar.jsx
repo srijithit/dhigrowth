@@ -49,46 +49,13 @@ export default function Navbar({ onOpenConsultation }) {
               Home
             </a>
 
-            {/* Services Dropdown */}
-            <div 
-              className="relative flex items-center h-full group"
-              onMouseEnter={() => setServicesDropdown(true)}
-              onMouseLeave={() => setServicesDropdown(false)}
+            <a 
+              href="#services" 
+              onClick={(e) => scrollToSection(e, 'services')}
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full border-b-2 border-transparent hover:border-blue-600 px-1"
             >
-              <a 
-                href="#services"
-                onClick={(e) => scrollToSection(e, 'services')}
-                className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-blue-600 transition h-full border-b-2 border-transparent hover:border-blue-600 group-hover:text-blue-600 px-1"
-              >
-                <span>Services</span>
-                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:rotate-180 transition duration-300" />
-              </a>
-
-              {servicesDropdown && (
-                <div 
-                  className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-2xl border border-slate-100 py-3 z-50 animate-fadeIn"
-                >
-                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
-                    Website Development
-                  </a>
-                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
-                    Application Development
-                  </a>
-                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
-                    AI Automation & ML Models
-                  </a>
-                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
-                    Digital Marketing & SEO
-                  </a>
-                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
-                    WhatsApp & Paid Ads
-                  </a>
-                  <a href="#services" onClick={(e) => { setServicesDropdown(false); scrollToSection(e, 'services'); }} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
-                    Ads Shooting & Video Editing
-                  </a>
-                </div>
-              )}
-            </div>
+              Services
+            </a>
 
             <a 
               href="#about" 
