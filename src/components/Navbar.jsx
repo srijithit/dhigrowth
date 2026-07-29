@@ -23,65 +23,94 @@ export default function Navbar({ onOpenConsultation }) {
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center space-x-8 h-full">
+          <nav className="hidden lg:flex items-center space-x-7 h-full">
             <a 
               href="#home" 
-              className="text-sm font-bold text-blue-600 hover:text-blue-700 transition flex items-center h-full"
+              className="text-sm font-bold text-blue-600 hover:text-blue-700 transition flex items-center h-full relative group py-2"
             >
-              Home
+              <span>Home</span>
+              <span className="absolute bottom-4 left-0 w-full h-0.5 bg-blue-600 rounded-full transition duration-300"></span>
             </a>
 
             {/* Services Dropdown */}
             <div 
-              className="relative flex items-center h-full"
+              className="relative flex items-center h-full group"
               onMouseEnter={() => setServicesDropdown(true)}
               onMouseLeave={() => setServicesDropdown(false)}
             >
-              <button 
-                className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-blue-600 transition py-2 focus:outline-none"
+              <a 
+                href="#services"
+                className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-blue-600 transition py-2 group-hover:text-blue-600"
               >
                 <span>Services</span>
-                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition" />
-              </button>
+                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:rotate-180 transition duration-300" />
+              </a>
 
               {servicesDropdown && (
-                <div className="absolute top-[80%] left-0 w-64 bg-white rounded-xl shadow-2xl border border-slate-100 py-3 z-50 animate-fadeIn">
-                  <a href="#services" className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                <div 
+                  className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-2xl border border-slate-100 py-3 z-50 animate-fadeIn"
+                  style={{ marginTop: '-4px' }}
+                >
+                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     Website Development
                   </a>
-                  <a href="#services" className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     Application Development
                   </a>
-                  <a href="#services" className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     AI Automation & ML Models
                   </a>
-                  <a href="#services" className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     Digital Marketing & SEO
                   </a>
-                  <a href="#services" className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     WhatsApp & Paid Ads
                   </a>
-                  <a href="#services" className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
+                  <a href="#services" onClick={() => setServicesDropdown(false)} className="block px-4 py-2 text-xs font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 transition">
                     Ads Shooting & Video Editing
                   </a>
                 </div>
               )}
             </div>
 
-            <a href="#about" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full">
-              About Us
+            <a 
+              href="#about" 
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full relative group py-2"
+            >
+              <span>About Us</span>
+              <span className="absolute bottom-4 left-0 w-0 group-hover:w-full h-0.5 bg-blue-600 rounded-full transition-all duration-300"></span>
             </a>
-            <a href="#work" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full">
-              Our Work
+
+            <a 
+              href="#work" 
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full relative group py-2"
+            >
+              <span>Our Work</span>
+              <span className="absolute bottom-4 left-0 w-0 group-hover:w-full h-0.5 bg-blue-600 rounded-full transition-all duration-300"></span>
             </a>
-            <a href="#industries" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full">
-              Industries
+
+            <a 
+              href="#industries" 
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full relative group py-2"
+            >
+              <span>Industries</span>
+              <span className="absolute bottom-4 left-0 w-0 group-hover:w-full h-0.5 bg-blue-600 rounded-full transition-all duration-300"></span>
             </a>
-            <a href="#blog" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full">
-              Blog
+
+            <a 
+              href="#blog" 
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full relative group py-2"
+            >
+              <span>Blog</span>
+              <span className="absolute bottom-4 left-0 w-0 group-hover:w-full h-0.5 bg-blue-600 rounded-full transition-all duration-300"></span>
             </a>
-            <a href="#contact" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full">
-              Contact Us
+
+            <a 
+              href="#contact" 
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full relative group py-2"
+            >
+              <span>Contact Us</span>
+              <span className="absolute bottom-4 left-0 w-0 group-hover:w-full h-0.5 bg-blue-600 rounded-full transition-all duration-300"></span>
             </a>
           </nav>
 
