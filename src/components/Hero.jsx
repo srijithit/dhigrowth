@@ -20,7 +20,7 @@ export default function Hero({ onOpenConsultation }) {
             <h1 className="text-3xl sm:text-4xl md:text-[44px] font-black text-slate-900 leading-[1.12] tracking-tight">
               COIMBATORE’S LEADING <br />
               DIGITAL GROWTH PARTNER — <br />
-              <span className="text-blue-600">
+              <span className="text-blue-600 shimmer-text">
                 WEB, APP, AI & MARKETING SOLUTIONS
               </span>
             </h1>
@@ -34,14 +34,14 @@ export default function Hero({ onOpenConsultation }) {
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
               <button
                 onClick={onOpenConsultation}
-                className="px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-lg shadow-md transition transform hover:-translate-y-0.5 text-center"
+                className="px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-0.5 text-center"
               >
                 Get a Free Consultation
               </button>
               
               <a
                 href="#services"
-                className="px-6 py-3.5 bg-white hover:bg-slate-50 text-blue-600 border border-blue-600 font-bold text-sm rounded-lg transition text-center shadow-sm"
+                className="px-6 py-3.5 bg-white hover:bg-slate-50 text-blue-600 border border-blue-600 font-bold text-sm rounded-lg transition text-center shadow-sm hover:shadow-md"
               >
                 Explore Our Services
               </a>
@@ -88,8 +88,8 @@ export default function Hero({ onOpenConsultation }) {
                     </marker>
                   </defs>
 
-                  {/* Outer Concentric Ring */}
-                  <circle cx="250" cy="250" r="105" fill="none" stroke="#0052FF" strokeWidth="1.5" strokeOpacity="0.4" strokeDasharray="3 3" />
+                  {/* Outer Concentric Ring with Slow Continuous Orbital Rotation */}
+                  <circle cx="250" cy="250" r="105" fill="none" stroke="#0052FF" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="4 4" className="animate-spin-slow" />
                   <circle cx="250" cy="250" r="80" fill="none" stroke="#0052FF" strokeWidth="1.2" strokeOpacity="0.6" />
 
                   {/* 5 Spoke Connector Lines with Blue Arrow Dots pointing outward to the nodes */}
@@ -110,18 +110,18 @@ export default function Hero({ onOpenConsultation }) {
                   <line x1="205" y1="215" x2="135" y2="160" stroke="#0052FF" strokeWidth="2.5" markerEnd="url(#blueDot)" />
                 </svg>
 
-                {/* Center D Hub Icon (Styled matching reference) */}
-                <div className="relative z-20 w-24 h-24 md:w-26 md:h-26 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-2xl ring-4 ring-white border-2 border-blue-400">
+                {/* Center D Hub Icon with Rhythmic Electric Blue Pulse Glow */}
+                <div className="relative z-20 w-24 h-24 md:w-26 md:h-26 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-2xl ring-4 ring-white border-2 border-blue-400 animate-pulse-glow cursor-pointer">
                   <span className="text-4xl md:text-5xl font-black tracking-tighter font-sans select-none">
                     D
                   </span>
                 </div>
 
-                {/* 5 Circular Nodes matching exact positions and labels in reference screenshot */}
+                {/* 5 Circular Nodes with Gentle Floating Animations */}
 
                 {/* Node 1: Top Center - WEB DEVELOPMENT */}
-                <div className="absolute top-9 flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-105">
+                <div className="absolute top-9 flex flex-col items-center animate-float">
+                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-110 duration-300">
                     <Monitor className="w-8 h-8 text-blue-600" />
                   </div>
                   <span className="mt-1.5 bg-white/95 backdrop-blur-sm px-3 py-0.5 rounded-full text-[11px] font-black text-slate-900 shadow-md uppercase tracking-wider text-center">
@@ -130,8 +130,8 @@ export default function Hero({ onOpenConsultation }) {
                 </div>
 
                 {/* Node 2: Top Right - MOBILE APP DEVELOPMENT */}
-                <div className="absolute right-3 md:right-6 top-24 flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-105">
+                <div className="absolute right-3 md:right-6 top-24 flex flex-col items-center animate-float-delayed">
+                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-110 duration-300">
                     <Smartphone className="w-8 h-8 text-blue-600" />
                   </div>
                   <span className="mt-1.5 bg-white/95 backdrop-blur-sm px-3 py-0.5 rounded-full text-[11px] font-black text-slate-900 shadow-md uppercase tracking-wider text-center max-w-[120px] leading-tight">
@@ -140,8 +140,8 @@ export default function Hero({ onOpenConsultation }) {
                 </div>
 
                 {/* Node 3: Bottom Right - ADS & SEO SOLUTIONS */}
-                <div className="absolute right-4 md:right-8 bottom-4 flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-105">
+                <div className="absolute right-4 md:right-8 bottom-4 flex flex-col items-center animate-float">
+                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-110 duration-300">
                     <TrendingUp className="w-8 h-8 text-blue-600" />
                   </div>
                   <span className="mt-1.5 bg-white/95 backdrop-blur-sm px-3 py-0.5 rounded-full text-[11px] font-black text-slate-900 shadow-md uppercase tracking-wider text-center max-w-[120px] leading-tight">
@@ -150,8 +150,8 @@ export default function Hero({ onOpenConsultation }) {
                 </div>
 
                 {/* Node 4: Bottom Left - DIGITAL MARKETING */}
-                <div className="absolute left-4 md:left-8 bottom-4 flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-105">
+                <div className="absolute left-4 md:left-8 bottom-4 flex flex-col items-center animate-float-delayed">
+                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-110 duration-300">
                     <Megaphone className="w-8 h-8 text-blue-600" />
                   </div>
                   <span className="mt-1.5 bg-white/95 backdrop-blur-sm px-3 py-0.5 rounded-full text-[11px] font-black text-slate-900 shadow-md uppercase tracking-wider text-center max-w-[120px] leading-tight">
@@ -160,8 +160,8 @@ export default function Hero({ onOpenConsultation }) {
                 </div>
 
                 {/* Node 5: Top Left - AI AUTOMATION */}
-                <div className="absolute left-3 md:left-6 top-24 flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-105">
+                <div className="absolute left-3 md:left-6 top-24 flex flex-col items-center animate-float">
+                  <div className="w-16 h-16 rounded-full bg-white border-2 border-blue-600 shadow-xl flex items-center justify-center text-blue-600 transition hover:scale-110 duration-300">
                     <BrainCircuit className="w-8 h-8 text-blue-600" />
                   </div>
                   <span className="mt-1.5 bg-white/95 backdrop-blur-sm px-3 py-0.5 rounded-full text-[11px] font-black text-slate-900 shadow-md uppercase tracking-wider text-center max-w-[120px] leading-tight">

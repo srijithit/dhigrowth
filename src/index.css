@@ -71,3 +71,66 @@ body {
   background: #0052FF;
   border-radius: 4px;
 }
+
+/* Custom Keyframe Animations */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 82, 255, 0.4), 0 0 35px rgba(0, 82, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 82, 255, 0.8), 0 0 60px rgba(0, 82, 255, 0.5);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+  transform-origin: 250px 250px;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 4s ease-in-out infinite 2s;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #0052FF 0%, #00C4FF 50%, #0052FF 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
