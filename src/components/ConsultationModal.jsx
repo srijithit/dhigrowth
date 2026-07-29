@@ -17,9 +17,17 @@ export default function ConsultationModal({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    setTimeout(() => {
-      // Auto reset after 3s on close
-    }, 3000);
+
+    const text = `*New Consultation Request — DhiGrowth*%0A%0A` +
+      `👤 *Name:* ${formData.name}%0A` +
+      `📞 *Phone:* ${formData.phone}%0A` +
+      `✉️ *Email:* ${formData.email}%0A` +
+      `🏢 *Company:* ${formData.company || 'N/A'}%0A` +
+      `🛠️ *Service:* ${formData.service}%0A` +
+      `🎯 *Goals:* ${formData.message || 'N/A'}`;
+
+    const whatsappUrl = `https://wa.me/919361088012?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const handleReset = () => {
