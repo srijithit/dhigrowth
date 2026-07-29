@@ -31,7 +31,7 @@ export default function ProcessSection() {
         
         {/* Headline */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black tracking-tight">
             OUR PROCESS — SIMPLE, TRANSPARENT, <span className="text-blue-600">RESULTS-DRIVEN</span>
           </h2>
         </div>
@@ -54,13 +54,13 @@ export default function ProcessSection() {
                   {step.num}
                 </div>
 
-                <h3 className="text-base font-extrabold text-slate-900 tracking-wider uppercase">
+                <h3 className="text-base font-black text-black tracking-wider uppercase">
                   {step.title}
                 </h3>
               </div>
 
               {/* Step Description */}
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pl-1">
+              <p className="text-black/85 text-xs sm:text-sm leading-relaxed pl-1 font-medium">
                 {step.description}
               </p>
 
