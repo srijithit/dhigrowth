@@ -210,7 +210,7 @@ export default function ServicesGrid({ onSelectService }) {
           <span className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 block">
             OUR SERVICES
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-black tracking-tight leading-tight">
             13 SOLUTIONS. 1 GOAL — YOUR <span className="text-blue-600">GROWTH.</span>
           </h2>
         </div>
@@ -229,11 +229,11 @@ export default function ServicesGrid({ onSelectService }) {
                 })}
               </div>
 
-              <h3 className="text-xs font-extrabold text-slate-900 tracking-wide uppercase mb-2 line-clamp-2 h-8 flex items-center justify-center">
+              <h3 className="text-xs font-black text-black tracking-wide uppercase mb-2 line-clamp-2 h-8 flex items-center justify-center">
                 {service.title}
               </h3>
 
-              <p className="text-slate-500 text-[11px] leading-relaxed line-clamp-4">
+              <p className="text-black/80 text-[11px] leading-relaxed line-clamp-4 font-normal">
                 {service.description}
               </p>
             </div>
@@ -254,11 +254,11 @@ export default function ServicesGrid({ onSelectService }) {
                 })}
               </div>
 
-              <h3 className="text-xs font-extrabold text-slate-900 tracking-wide uppercase mb-2 line-clamp-2 h-8 flex items-center justify-center">
+              <h3 className="text-xs font-black text-black tracking-wide uppercase mb-2 line-clamp-2 h-8 flex items-center justify-center">
                 {service.title}
               </h3>
 
-              <p className="text-slate-500 text-[11px] leading-relaxed line-clamp-4">
+              <p className="text-black/80 text-[11px] leading-relaxed line-clamp-4 font-normal">
                 {service.description}
               </p>
             </div>

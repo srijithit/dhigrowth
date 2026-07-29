@@ -17,7 +17,7 @@ export default function Hero({ onOpenConsultation }) {
           <div className="lg:col-span-6 space-y-6 text-left py-4">
             
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-[44px] font-black text-slate-900 leading-[1.12] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-[44px] font-black text-black leading-[1.12] tracking-tight">
               COIMBATORE’S LEADING <br />
               DIGITAL GROWTH PARTNER — <br />
               <span className="text-blue-600 shimmer-text">
@@ -26,7 +26,7 @@ export default function Hero({ onOpenConsultation }) {
             </h1>
 
             {/* Paragraph Body */}
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+            <p className="text-black/90 text-sm sm:text-base leading-relaxed max-w-xl font-medium">
               DhiGrowth is a full-service digital agency in Coimbatore helping businesses scale faster with cutting-edge website development, mobile app development, AI automation, and result-driven digital marketing. From Meta Ads and Google Ads to WhatsApp marketing, SEO, and video production — we build everything your business needs to grow online.
             </p>
 
@@ -52,8 +52,13 @@ export default function Hero({ onOpenConsultation }) {
           {/* Right Column Visual Container with Angled Slant & Connected Arrow Spoke Lines */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
             
-            {/* Container Card */}
-            <div className="relative w-full h-[440px] md:h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-slate-100 group">
+            {/* Container Card with Angled Slant */}
+            <div 
+              className="relative w-full h-[440px] md:h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-slate-100 group"
+              style={{
+                clipPath: typeof window !== 'undefined' && window.innerWidth >= 1024 ? 'polygon(7% 0, 100% 0, 100% 100%, 0% 100%)' : 'none'
+              }}
+            >
               
               {/* Real Coimbatore Skyline Background Image */}
               <img

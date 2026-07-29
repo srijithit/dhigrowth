@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Target, Users } from 'lucide-react';
+import { Cpu, Target, Globe } from 'lucide-react';
 
 export default function WhoWeAre() {
   const pillars = [
@@ -14,7 +14,7 @@ export default function WhoWeAre() {
       description: "Data-driven SEO, paid ads, and social media strategies that bring real ROI."
     },
     {
-      icon: <Users className="w-8 h-8 text-blue-600" />,
+      icon: <Globe className="w-8 h-8 text-blue-600" />,
       title: "COIMBATORE ROOTS, GLOBAL STANDARDS",
       description: "Local expertise with world-class execution for businesses of all sizes."
     }
@@ -31,11 +31,11 @@ export default function WhoWeAre() {
             <span className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 block">
               WHO WE ARE
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-[40px] font-black text-slate-900 tracking-tight leading-[1.15] mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-[40px] font-black text-black tracking-tight leading-[1.15] mb-4">
               DRIVEN BY TECHNOLOGY. <br />
               FOCUSED ON <span className="text-blue-600">GROWTH.</span>
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed pr-4 font-normal">
+            <p className="text-black/90 text-sm sm:text-base leading-relaxed pr-4 font-medium">
               We are DhiGrowth — a Coimbatore-based digital agency that combines technology, creativity, and strategy to deliver measurable business results. Whether you are a startup, SME, or enterprise, our end-to-end digital solutions are built to accelerate your growth.
             </p>
           </div>
@@ -54,11 +54,11 @@ export default function WhoWeAre() {
                     })}
                   </div>
 
-                  <h3 className="text-sm font-black text-slate-900 tracking-wide uppercase mb-2 leading-tight">
+                  <h3 className="text-sm font-black text-black tracking-wide uppercase mb-2 leading-tight">
                     {pillar.title}
                   </h3>
 
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xs font-normal">
+                  <p className="text-black/85 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
                     {pillar.description}
                   </p>
                 </div>

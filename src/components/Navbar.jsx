@@ -52,9 +52,10 @@ export default function Navbar({ onOpenConsultation }) {
             <a 
               href="#services" 
               onClick={(e) => scrollToSection(e, 'services')}
-              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center h-full border-b-2 border-transparent hover:border-blue-600 px-1"
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition flex items-center space-x-1 h-full border-b-2 border-transparent hover:border-blue-600 px-1 group"
             >
-              Services
+              <span>Services</span>
+              <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition duration-300" />
             </a>
 
             <a 
