@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 html {
@@ -7,7 +7,7 @@ html {
 }
 
 .font-condensed {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', 'Bebas Neue', sans-serif;
 }
 
 :root {
