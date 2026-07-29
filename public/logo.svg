@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient: Deep Blue to Lighter Blue -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E5BFF" />
+      <stop offset="100%" stop-color="#00C4FF" />
+    </linearGradient>
+
+    <!-- Cyan Gradient for Arc and Dot -->
+    <linearGradient id="cyanGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#00FFFF" />
+    </linearGradient>
+  </defs>
+
+  <!-- Blue Background Circle -->
+  <circle cx="50" cy="50" r="46" fill="url(#bgGrad)" />
+
+  <!-- Cyan Dot (Head of the abstract figure) -->
+  <circle cx="43" cy="35" r="7.5" fill="url(#cyanGrad)" />
+
+  <!-- White Abstract Figure (Body / Swoosh / Star) -->
+  <path 
+    d="M 20 54 
+       L 76 38 
+       L 62 70 
+       L 51 58
+       L 43 82 
+       Z" 
+    fill="#FFFFFF" 
+  />
+
+  <path 
+    d="M 20 54 L 76 38 L 51 58 Z" 
+    fill="#FFFFFF" 
+  />
+  <path 
+    d="M 76 38 L 51 58 L 43 82 Z" 
+    fill="#E0EDFF" 
+  />
+
+  <!-- Outer Cyan Arrow Arc Ring on Bottom-Right -->
+  <path 
+    d="M 50 94 A 44 44 0 0 0 94 50" 
+    fill="none" 
+    stroke="url(#cyanGrad)" 
+    stroke-width="5" 
+    stroke-linecap="round" 
+  />
+  
+  <!-- Cyan Arrowhead -->
+  <polygon points="94,44 100,56 88,54" fill="url(#cyanGrad)" />
+</svg>
