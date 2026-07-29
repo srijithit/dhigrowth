@@ -85,27 +85,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Carousel Pagination Dots */}
-        <div className="flex items-center justify-center space-x-2">
-          <button
-            onClick={() => setActiveTab(0)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              activeTab === 0 ? 'bg-blue-600 w-8' : 'bg-slate-300 hover:bg-slate-400'
-            }`}
-          ></button>
-          <button
-            onClick={() => setActiveTab(1)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              activeTab === 1 ? 'bg-blue-600 w-8' : 'bg-slate-300 hover:bg-slate-400'
-            }`}
-          ></button>
-          <button
-            onClick={() => setActiveTab(2)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              activeTab === 2 ? 'bg-blue-600 w-8' : 'bg-slate-300 hover:bg-slate-400'
-            }`}
-          ></button>
-        </div>
+
 
       </div>
     </section>
