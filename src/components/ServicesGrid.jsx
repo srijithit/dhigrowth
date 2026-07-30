@@ -20,7 +20,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "01",
       title: "Website Development",
-      icon: <Code className="w-7 h-7 text-brand-blue" />,
+      icon: Code,
       description: "Custom, responsive, SEO-ready websites built for speed and conversions.",
       features: [
         "React & Vite / Next.js High Performance Architecture",
@@ -33,7 +33,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "02",
       title: "Application Development",
-      icon: <Smartphone className="w-7 h-7 text-brand-blue" />,
+      icon: Smartphone,
       description: "iOS, Android & cross-platform apps designed for seamless user experiences.",
       features: [
         "Flutter & React Native Cross-Platform Apps",
@@ -46,7 +46,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "03",
       title: "AI Development",
-      icon: <BrainCircuit className="w-7 h-7 text-brand-blue" />,
+      icon: BrainCircuit,
       description: "Smart AI products — chatbots, recommendation engines & custom ML models.",
       features: [
         "Custom LLM & GPT Agents Integration",
@@ -59,7 +59,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "04",
       title: "AI Automation",
-      icon: <Bot className="w-7 h-7 text-brand-blue" />,
+      icon: Bot,
       description: "Automate repetitive tasks and workflows using intelligent AI solutions.",
       features: [
         "Zapier / Make / n8n Workflow Automation",
@@ -72,7 +72,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "05",
       title: "WhatsApp Marketing",
-      icon: <MessageSquare className="w-7 h-7 text-brand-blue" />,
+      icon: MessageSquare,
       description: "High-engagement campaigns via WhatsApp Business API to drive sales.",
       features: [
         "WhatsApp Official Business API Setup & Green Tick",
@@ -85,7 +85,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "06",
       title: "Business Automation",
-      icon: <Cog className="w-7 h-7 text-brand-blue" />,
+      icon: Cog,
       description: "Streamline operations, reduce costs & boost efficiency with smart automation.",
       features: [
         "Custom ERP & CRM System Setup",
@@ -98,7 +98,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "07",
       title: "Business Development",
-      icon: <TrendingUp className="w-7 h-7 text-brand-blue" />,
+      icon: TrendingUp,
       description: "Strategic consulting and execution to expand your market presence.",
       features: [
         "Go-To-Market (GTM) Strategy for Coimbatore & Beyond",
@@ -111,7 +111,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "08",
       title: "SEO",
-      icon: <Search className="w-7 h-7 text-brand-blue" />,
+      icon: Search,
       description: "Rank higher on Google with technical SEO, content strategy & link building.",
       features: [
         "Technical SEO & Speed Optimization",
@@ -124,7 +124,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "09",
       title: "Digital Marketing",
-      icon: <Megaphone className="w-7 h-7 text-brand-blue" />,
+      icon: Megaphone,
       description: "Full-funnel digital campaigns that attract, engage and convert customers.",
       features: [
         "Full-Funnel Campaign Architecture",
@@ -137,7 +137,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "10",
       title: "Social Media Marketing",
-      icon: <Share2 className="w-7 h-7 text-brand-blue" />,
+      icon: Share2,
       description: "Build your brand and community across Instagram, Facebook & LinkedIn.",
       features: [
         "Custom Content Calendar & Graphic Design",
@@ -150,7 +150,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "11",
       title: "Meta & Google Ads",
-      icon: <Target className="w-7 h-7 text-brand-blue" />,
+      icon: Target,
       description: "Targeted paid advertising to maximise ROAS across Google and Meta platforms.",
       features: [
         "Google Search, Performance Max & YouTube Ads",
@@ -163,7 +163,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "12",
       title: "Ads Shooting",
-      icon: <Video className="w-7 h-7 text-brand-blue" />,
+      icon: Video,
       description: "Professional ad film production — creative concepts to camera-ready content.",
       features: [
         "On-Location 4K Video Production",
@@ -176,7 +176,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "13",
       title: "Video Editing",
-      icon: <Film className="w-7 h-7 text-brand-blue" />,
+      icon: Film,
       description: "High-quality video editing for reels, ads, brand videos & social content.",
       features: [
         "Instagram Reels & Shorts Fast-Paced Editing",
@@ -222,9 +222,10 @@ export default function ServicesGrid({ onSelectService }) {
 
                 {/* Service Icon */}
                 <div className="mb-6 flex items-center justify-center w-12 h-12 bg-light-blue/10 rounded-xl group-hover:bg-brand-blue transition duration-300">
-                  {React.cloneElement(service.icon, {
-                    className: "w-6 h-6 text-brand-blue group-hover:text-white transition duration-300 stroke-[2]"
-                  })}
+                  {(() => {
+                    const IconComponent = service.icon;
+                    return <IconComponent className="w-6 h-6 text-brand-blue group-hover:text-white transition duration-300 stroke-[2]" />;
+                  })()}
                 </div>
 
                 {/* Service Title (Bebas Neue) */}
