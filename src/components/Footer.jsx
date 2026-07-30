@@ -25,16 +25,8 @@ export default function Footer() {
     return () => observer.disconnect();
   }, []);
 
-  const handleWhatsAppClick = (e) => {
-    e.preventDefault();
+  const handleWhatsAppClick = () => {
     trackAdEvent('Contact', { method: 'WhatsApp', placement: 'Footer' });
-    const number = '919361088012';
-    const text = encodeURIComponent('Hi DhiGrowth, I want to grow my business in India!');
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const url = isMobile 
-      ? `https://api.whatsapp.com/send?phone=${number}&text=${text}`
-      : `https://web.whatsapp.com/send?phone=${number}&text=${text}`;
-    window.open(url, '_blank');
   };
 
   return (
@@ -60,7 +52,9 @@ export default function Footer() {
             
             {/* Phone */}
             <a 
-              href="https://wa.me/919361088012" 
+              href="https://api.whatsapp.com/send?phone=919361088012&text=Hi%20DhiGrowth%2C%20I%20want%20to%20grow%20my%20business%20in%20India%21" 
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleWhatsAppClick}
               className="flex items-center space-x-2 hover:text-bright-blue transition font-semibold cursor-pointer"
               title="Chat on WhatsApp"

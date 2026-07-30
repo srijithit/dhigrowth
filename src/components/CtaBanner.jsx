@@ -3,16 +3,8 @@ import { MessageCircle, ArrowRight } from 'lucide-react';
 import { trackAdEvent } from '../utils/analytics';
 
 export default function CtaBanner({ onOpenConsultation }) {
-  const handleWhatsAppClick = (e) => {
-    e.preventDefault();
+  const handleWhatsAppClick = () => {
     trackAdEvent('Contact', { method: 'WhatsApp', placement: 'CTA Banner' });
-    const number = '919361088012';
-    const text = encodeURIComponent('Hi DhiGrowth, I want to grow my business in India!');
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const url = isMobile 
-      ? `https://api.whatsapp.com/send?phone=${number}&text=${text}`
-      : `https://web.whatsapp.com/send?phone=${number}&text=${text}`;
-    window.open(url, '_blank');
   };
 
   return (
@@ -55,7 +47,9 @@ export default function CtaBanner({ onOpenConsultation }) {
             </button>
 
             <a
-              href="https://wa.me/919361088012"
+              href="https://api.whatsapp.com/send?phone=919361088012&text=Hi%20DhiGrowth%2C%20I%20want%20to%20grow%20my%20business%20in%20India%21"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleWhatsAppClick}
               className="px-8 py-4 bg-transparent hover:bg-brand-blue/5 border-2 border-brand-blue/30 hover:border-brand-blue text-brand-blue font-bold text-sm uppercase tracking-wider rounded-xl transition shadow-md flex items-center justify-center space-x-2.5 cursor-pointer"
             >
