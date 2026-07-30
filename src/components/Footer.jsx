@@ -36,7 +36,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="bg-slate-50 text-slate-600 pt-16 border-t border-slate-200/80 relative overflow-hidden">
+    <footer id="contact" ref={footerRef} className="bg-slate-50 text-slate-600 pt-16 border-t border-slate-200/80 relative overflow-hidden">
       
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-brand-blue/5 blur-[120px] pointer-events-none rounded-full"></div>
@@ -44,7 +44,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Centered Contact Block */}
-        <div className="text-center pb-12 max-w-2xl mx-auto space-y-6">
+        <div 
+          className="text-center pb-12 max-w-2xl mx-auto space-y-6 transition-all duration-[1000ms] ease-out"
+          style={{
+            transform: isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(0, 40px, 0)',
+            opacity: isVisible ? 1 : 0
+          }}
+        >
           <h4 className="text-2xl font-bebas font-bold uppercase tracking-wider text-slate-800">
             Contact Us
           </h4>
@@ -94,7 +100,13 @@ export default function Footer() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-4">
+          <div 
+            className="flex flex-col md:flex-row items-center justify-between gap-6 pb-4 transition-all duration-[1200ms] delay-[350ms] ease-out"
+            style={{
+              transform: isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(0, 30px, 0)',
+              opacity: isVisible ? 1 : 0
+            }}
+          >
             
             {/* Copyright Left */}
             <p className="text-[11px] sm:text-xs font-sans uppercase tracking-widest text-white/90 text-center md:text-left">
@@ -122,8 +134,7 @@ export default function Footer() {
 
         {/* Giant Watermark Text Background */}
         <div 
-          ref={footerRef}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none z-0 transition-all duration-[1500ms] ease-out"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none z-0 transition-all duration-[1600ms] delay-[150ms] ease-out"
           style={{
             transform: isVisible 
               ? 'translate3d(-50%, 33.33%, 0) scale(1)' 
