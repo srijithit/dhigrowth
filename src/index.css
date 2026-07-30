@@ -46,22 +46,11 @@ body {
 }
 
 /* Custom Brand Colors & Gradients */
-.bg-brand-blue {
-  background-color: #4A72EB;
-}
 
 @media (pointer: fine) {
   body, a, button, input, select, textarea, [role="button"] {
     cursor: none !important;
   }
-}
-
-.text-brand-blue {
-  color: #4A72EB;
-}
-
-.border-brand-blue {
-  border-color: #4A72EB;
 }
 
 .bg-dark-navy {
