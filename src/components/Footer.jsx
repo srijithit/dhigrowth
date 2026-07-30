@@ -7,87 +7,126 @@ import {
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-slate-50 text-slate-600 pt-16 pb-8 border-t border-slate-200/80 relative overflow-hidden">
+    <footer id="contact" className="bg-slate-50 text-slate-600 pt-16 border-t border-slate-200/80 relative overflow-hidden">
       
       {/* Background decoration */}
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-blue/5 blur-[120px] pointer-events-none rounded-full"></div>
+      <div className="absolute top-0 left-0 w-80 h-80 bg-brand-blue/5 blur-[120px] pointer-events-none rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 pb-12 border-b border-slate-200/80">
-          
-          {/* Column 1: Brand Info */}
-          <div className="space-y-4 text-left">
-            <div className="flex items-center space-x-2.5">
-              <img src="/logo.png" alt="DHI GROWTH Logo" className="h-10 w-auto object-contain" />
-            </div>
-            <p className="text-xs text-slate-600 leading-relaxed max-w-xs font-sans">
-              India's Leading Digital Growth Partner helping businesses scale with cutting-edge web, app, AI, and marketing solutions.
-            </p>
-          </div>
-
-          {/* Column 2: Contact Us */}
-          <div className="space-y-3.5 text-left md:text-right md:flex md:flex-col md:items-end">
-            <h4 className="text-sm font-bebas font-bold uppercase tracking-wider text-slate-800 mb-4">
-              Contact Us
-            </h4>
+        {/* Top Centered Contact Block */}
+        <div className="text-center pb-12 max-w-2xl mx-auto space-y-6">
+          <h4 className="text-2xl font-bebas font-bold uppercase tracking-wider text-slate-800">
+            Contact Us
+          </h4>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 font-sans text-xs sm:text-sm text-slate-600">
             
+            {/* Phone */}
             <a 
               href="https://wa.me/919361088012" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-2.5 text-xs hover:text-bright-blue transition group font-sans text-slate-700"
+              className="flex items-center space-x-2 hover:text-bright-blue transition font-semibold"
               title="Chat on WhatsApp"
             >
-              <Phone className="w-4 h-4 text-bright-blue shrink-0 group-hover:scale-110 transition" />
-              <span className="hover:underline font-semibold">+91 93610 88012</span>
+              <Phone className="w-4 h-4 text-bright-blue shrink-0" />
+              <span>+91 93610 88012</span>
             </a>
 
+            {/* Email */}
             <a 
               href="mailto:dhinesh@dhigrowth.com?subject=Growth%20Consultation%20Inquiry%20-%20DhiGrowth&body=Hi%20Dhinesh%2C%0A%0AI%20visited%20DhiGrowth%20and%20would%20like%20to%20schedule%20a%20consultation%20to%20discuss%20growing%20my%20business%20online.%0A%0AHere%20are%20my%20details%3A%0A-%20Name%3A%20%0A-%20Company%20Name%3A%20%0A-%20Requirements%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you%21" 
-              className="flex items-center space-x-2.5 text-xs font-sans text-slate-700 hover:text-bright-blue transition group"
+              className="flex items-center space-x-2 hover:text-bright-blue transition"
             >
-              <Mail className="w-4 h-4 text-bright-blue shrink-0 group-hover:scale-110 transition" />
-              <span className="hover:underline">dhinesh@dhigrowth.com</span>
+              <Mail className="w-4 h-4 text-bright-blue shrink-0" />
+              <span>dhinesh@dhigrowth.com</span>
             </a>
 
+            {/* Address */}
             <a 
               href="https://www.google.com/maps/place/Dhigrowth+Business+Pvt+Ltd/@11.0485934,77.0421634,19z/data=!3m1!4b1!4m6!3m5!1s0x3ba85700608f4393:0x7a612ef883b16359!8m2!3d11.0485934!4d77.0428071!16s%2Fg%2F11njtdfg3_?entry=tts&g_ep=EgoyMDI2MDcyNi4wIPu8ASoASAFQAw%3D%3D&skid=9788cfeb-797b-489b-bd6b-3131448a25a5" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-start space-x-2.5 text-xs hover:text-bright-blue transition group font-sans text-slate-700 text-left md:text-right"
+              className="flex items-center space-x-2 hover:text-bright-blue transition"
               title="Open location on Google Maps"
             >
-              <MapPin className="w-4 h-4 text-bright-blue shrink-0 mt-0.5 group-hover:scale-110 transition" />
-              <span className="hover:underline">Dhigrowth Business Pvt Ltd, Coimbatore</span>
+              <MapPin className="w-4 h-4 text-bright-blue shrink-0" />
+              <span className="hover:underline">Coimbatore, Tamil Nadu</span>
             </a>
 
-            {/* Social SVG Icons */}
-            <div className="flex items-center space-x-3 pt-3">
+          </div>
+        </div>
+
+      </div>
+
+      {/* Premium Full-Width Brand Blue Bottom Bar */}
+      <div className="bg-brand-blue w-full py-12 md:py-16 text-white relative overflow-hidden mt-4">
+        
+        {/* Inner glow circle decoration */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-4">
+            
+            {/* Copyright Left */}
+            <p className="text-[11px] sm:text-xs font-sans uppercase tracking-widest text-white/90 text-center md:text-left">
+              © {new Date().getFullYear()} DHI GROWTH. All rights reserved.
+            </p>
+
+            {/* Social Icons Right (Inline SVGs to prevent dependency clashes) */}
+            <div className="flex items-center space-x-6">
+              {/* Facebook */}
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:scale-110 transition duration-300 text-white hover:text-white/80"
+                title="Facebook"
+              >
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                </svg>
+              </a>
+              
               {/* Instagram */}
               <a 
                 href="https://www.instagram.com/dhigrowth" 
                 target="_blank" 
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-pink-600/10 text-pink-500 hover:bg-pink-600 hover:text-white flex items-center justify-center transition shadow-sm" 
+                rel="noopener noreferrer" 
+                className="hover:scale-110 transition duration-300 text-white hover:text-white/80"
                 title="Instagram"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
               </a>
-            </div>
-          </div>
 
+              {/* LinkedIn */}
+              <a 
+                href="https://www.linkedin.com/company/dhigrowth" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:scale-110 transition duration-300 text-white hover:text-white/80"
+                title="LinkedIn"
+              >
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-6 text-center text-xs text-slate-500 font-sans border-t border-slate-200/40">
-          <p>© {new Date().getFullYear()} DhiGrowth. All Rights Reserved.</p>
+        {/* Giant Watermark Text Background */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 w-full text-center pointer-events-none select-none z-0">
+          <span className="text-[10vw] font-black tracking-widest text-white/[0.07] font-bebas uppercase leading-none block">
+            DHI GROWTH
+          </span>
         </div>
 
       </div>
+
     </footer>
   );
 }
