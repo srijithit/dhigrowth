@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, CheckCircle, Send, Phone, Mail, User, Building } from 'lucide-react';
+import { trackAdEvent } from '../utils/analytics';
 
 export default function ConsultationModal({ isOpen, onClose, preselectedService }) {
   const [submitted, setSubmitted] = useState(false);
@@ -47,6 +48,10 @@ export default function ConsultationModal({ isOpen, onClose, preselectedService 
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    trackAdEvent('Lead', { 
+      content_name: 'Free Strategy Session Request', 
+      service_needed: formData.service 
+    });
 
     const text = `*New Consultation Request — DhiGrowth*%0A%0A` +
       `👤 *Name:* ${formData.name}%0A` +

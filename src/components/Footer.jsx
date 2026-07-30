@@ -4,6 +4,7 @@ import {
   Mail, 
   MapPin
 } from 'lucide-react';
+import { trackAdEvent } from '../utils/analytics';
 
 export default function Footer() {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -26,6 +27,7 @@ export default function Footer() {
 
   const handleWhatsAppClick = (e) => {
     e.preventDefault();
+    trackAdEvent('Contact', { method: 'WhatsApp', placement: 'Footer' });
     const number = '919361088012';
     const text = encodeURIComponent('Hi DhiGrowth, I want to grow my business in India!');
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);

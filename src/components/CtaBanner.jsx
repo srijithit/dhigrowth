@@ -1,9 +1,11 @@
 import React from 'react';
 import { MessageCircle, ArrowRight } from 'lucide-react';
+import { trackAdEvent } from '../utils/analytics';
 
 export default function CtaBanner({ onOpenConsultation }) {
   const handleWhatsAppClick = (e) => {
     e.preventDefault();
+    trackAdEvent('Contact', { method: 'WhatsApp', placement: 'CTA Banner' });
     const number = '919361088012';
     const text = encodeURIComponent('Hi DhiGrowth, I want to grow my business in India!');
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
