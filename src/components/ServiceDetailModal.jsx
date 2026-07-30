@@ -19,7 +19,10 @@ export default function ServiceDetailModal({ service, onClose, onBookConsultatio
           
           <div className="flex items-center space-x-3 mb-2">
             <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
-              {service.icon}
+              {(() => {
+                const IconComponent = service.icon;
+                return <IconComponent className="w-6 h-6 stroke-[2]" />;
+              })()}
             </div>
             <span className="text-xs font-bold uppercase tracking-wider text-light-blue font-zen">
               Solution #{service.id}
