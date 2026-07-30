@@ -40,7 +40,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
       <div className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 p-6 text-white relative">
+        <div className="bg-gradient-to-r from-brand-blue via-bright-blue to-brand-blue p-6 text-white relative">
           <button
             onClick={handleReset}
             className="absolute top-4 right-4 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-1 transition"
@@ -52,7 +52,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
           </div>
           <h3 className="text-2xl font-bold tracking-tight">Book Your Free Consultation</h3>
           <p className="text-blue-100 text-sm mt-1">
-            Get a tailored digital growth plan & free website/marketing audit from Coimbatore experts.
+            Get a tailored digital growth plan & free website/marketing audit from our growth experts.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Arun Kumar"
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
                     />
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 98765 43210"
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
                     />
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="arun@business.com"
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
                     />
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="Coimbatore Enterprises"
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
                     />
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 <select
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition text-slate-700 font-medium"
+                  className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition text-slate-700 font-medium"
                 >
                   <option>Website Development</option>
                   <option>Application Development</option>
@@ -176,13 +176,13 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="We want to scale our leads and launch a modern mobile app in Coimbatore..."
-                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition"
+                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 transition transform active:scale-95"
+                className="w-full py-3.5 bg-brand-blue hover:bg-bright-blue text-white font-bold rounded-xl shadow-lg shadow-brand-blue/30 flex items-center justify-center space-x-2 transition transform active:scale-95 cursor-pointer"
               >
                 <span>Submit Consultation Request</span>
                 <Send className="w-4 h-4" />

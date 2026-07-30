@@ -9,7 +9,7 @@ export default function ServiceDetailModal({ service, onClose, onBookConsultatio
       <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100">
         
         {/* Top Accent Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-6 text-white relative">
+        <div className="bg-gradient-to-r from-brand-blue to-bright-blue p-6 text-white relative">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-1.5 transition"
@@ -21,12 +21,12 @@ export default function ServiceDetailModal({ service, onClose, onBookConsultatio
             <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
               {service.icon}
             </div>
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-200">
+            <span className="text-xs font-bold uppercase tracking-wider text-light-blue font-zen">
               Solution #{service.id}
             </span>
           </div>
 
-          <h3 className="text-2xl font-bold">{service.title}</h3>
+          <h3 className="text-3xl font-bebas font-bold tracking-wider">{service.title}</h3>
         </div>
 
         {/* Content */}
@@ -36,13 +36,13 @@ export default function ServiceDetailModal({ service, onClose, onBookConsultatio
           </p>
 
           <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 font-zen">
               Key Features & Deliverables
             </h4>
             <ul className="space-y-2 text-sm text-slate-600">
               {service.features.map((feat, idx) => (
                 <li key={idx} className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-bright-blue shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}
@@ -55,7 +55,7 @@ export default function ServiceDetailModal({ service, onClose, onBookConsultatio
                 onClose();
                 onBookConsultation();
               }}
-              className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 transition"
+              className="flex-1 py-3 bg-brand-blue hover:bg-bright-blue text-white font-bold text-sm rounded-xl shadow-lg shadow-brand-blue/30 flex items-center justify-center space-x-2 transition cursor-pointer"
             >
               <span>Request Quote for {service.title}</span>
               <ArrowRight className="w-4 h-4" />

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, X, Send, Sparkles, MessageSquare, PhoneCall, Check } from 'lucide-react';
+import { X, Send, Sparkles, MessageCircle } from 'lucide-react';
 
 export default function AiChatbot({ onOpenConsultation }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +7,7 @@ export default function AiChatbot({ onOpenConsultation }) {
   const [messages, setMessages] = useState([
     {
       sender: 'bot',
-      text: "Hello! 👋 I'm DhiGrowth's AI Assistant. How can I help accelerate your business growth in Coimbatore today?",
+      text: "Hello! 👋 I'm DhiGrowth's AI Assistant. How can I help accelerate your business growth today?",
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -40,11 +40,11 @@ export default function AiChatbot({ onOpenConsultation }) {
     } else if (text.includes('app') || text.includes('mobile')) {
       return "We develop high-performance cross-platform iOS and Android apps using Flutter and React Native, complete with push notifications, payment gateways, and cloud backends.";
     } else if (text.includes('seo') || text.includes('ads') || text.includes('marketing')) {
-      return "Our digital marketing team specializes in local Coimbatore SEO, Google Performance Max ads, Meta high-ROAS campaigns, and viral video ad shooting.";
+      return "Our digital marketing team specializes in organic SEO, Google Performance Max ads, Meta high-ROAS campaigns, and viral video ad shooting.";
     } else if (text.includes('talk') || text.includes('consult') || text.includes('contact') || text.includes('book')) {
       return "Awesome! You can click the button below to book a free 1-on-1 strategy call with our senior consultants or chat live on WhatsApp!";
     } else {
-      return "DhiGrowth is Coimbatore's premier digital growth partner. We offer end-to-end Website & App Development, AI Automation, SEO, and Paid Marketing. Let us know what service you are looking for!";
+      return "DhiGrowth is India's premier digital growth partner. We offer end-to-end Website & App Development, AI Automation, SEO, and Paid Marketing. Let us know what service you are looking for!";
     }
   };
 
@@ -70,19 +70,22 @@ export default function AiChatbot({ onOpenConsultation }) {
       
       {/* Floating Bot Toggle Button */}
       {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="relative group flex items-center space-x-2.5 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3.5 rounded-full shadow-2xl hover:scale-105 transition duration-300 border-2 border-white/20 animate-pulse-glow"
-        >
-          <div className="relative">
-            <img src="/logo.svg" alt="DhiGrowth AI" className="w-6 h-6 object-contain" />
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-blue-600 animate-ping"></span>
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-blue-600"></span>
-          </div>
-          <span className="text-xs font-black tracking-wide uppercase pr-1 hidden sm:inline">
-            AI Assistant
-          </span>
-        </button>
+        <div className="relative flex items-center justify-center">
+          {/* Outer glowing ring 1 */}
+          <div className="absolute w-20 h-20 rounded-full border-2 border-brand-blue/15 animate-ping-slow pointer-events-none"></div>
+          {/* Outer glowing ring 2 */}
+          <div className="absolute w-16 h-16 rounded-full border border-brand-blue/30 pointer-events-none"></div>
+          
+          <button
+            onClick={() => setIsOpen(true)}
+            className="w-14 h-14 bg-brand-blue hover:bg-bright-blue text-white rounded-full shadow-2xl hover:scale-110 transition duration-300 flex items-center justify-center relative cursor-pointer border border-white/20"
+          >
+            <MessageCircle className="w-6 h-6 text-white stroke-[2]" />
+            {/* Green active status dot */}
+            <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-brand-blue animate-ping"></span>
+            <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-brand-blue"></span>
+          </button>
+        </div>
       )}
 
       {/* Chatbot Window */}
@@ -90,10 +93,10 @@ export default function AiChatbot({ onOpenConsultation }) {
         <div className="w-[340px] sm:w-[380px] h-[520px] bg-white rounded-3xl shadow-2xl border border-slate-200/90 flex flex-col overflow-hidden animate-fadeIn">
           
           {/* Chat Header */}
-          <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 p-4 text-white flex items-center justify-between shadow-md">
+          <div className="bg-gradient-to-r from-brand-blue via-bright-blue to-brand-blue p-4 text-white flex items-center justify-between shadow-md">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 p-1">
-                <img src="/logo.svg" alt="DhiGrowth AI Logo" className="w-full h-full object-contain" />
+              <div className="h-9 w-auto bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 p-1 rounded-lg px-2">
+                <img src="/logo.png" alt="DhiGrowth AI Logo" className="h-full w-auto object-contain" />
               </div>
               <div>
                 <h4 className="text-sm font-extrabold flex items-center space-x-1.5">
@@ -125,7 +128,7 @@ export default function AiChatbot({ onOpenConsultation }) {
                 <div
                   className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-xs leading-relaxed font-medium shadow-sm ${
                     msg.sender === 'user'
-                      ? 'bg-blue-600 text-white rounded-tr-none'
+                      ? 'bg-brand-blue text-white rounded-tr-none'
                       : 'bg-white text-slate-800 border border-slate-200/80 rounded-tl-none'
                   }`}
                 >
@@ -137,9 +140,9 @@ export default function AiChatbot({ onOpenConsultation }) {
 
             {isTyping && (
               <div className="flex items-center space-x-1.5 bg-white border border-slate-200/80 px-3.5 py-2 rounded-2xl rounded-tl-none w-16">
-                <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce"></span>
-                <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                <span className="w-1.5 h-1.5 bg-brand-blue rounded-full animate-bounce"></span>
+                <span className="w-1.5 h-1.5 bg-brand-blue rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                <span className="w-1.5 h-1.5 bg-brand-blue rounded-full animate-bounce [animation-delay:0.4s]"></span>
               </div>
             )}
             <div ref={messagesEndRef} />
@@ -151,7 +154,7 @@ export default function AiChatbot({ onOpenConsultation }) {
               <button
                 key={idx}
                 onClick={() => handleSend(q)}
-                className="whitespace-nowrap text-[10px] font-bold text-blue-600 bg-blue-50 hover:bg-blue-600 hover:text-white px-3 py-1.5 rounded-full transition duration-300 border border-blue-100 shrink-0"
+                className="whitespace-nowrap text-[10px] font-bold text-bright-blue bg-light-blue/10 hover:bg-bright-blue hover:text-white px-3 py-1.5 rounded-full transition duration-300 border border-light-blue/20 shrink-0 cursor-pointer"
               >
                 {q}
               </button>
@@ -172,11 +175,11 @@ export default function AiChatbot({ onOpenConsultation }) {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder="Ask DhiGrowth AI..."
-                className="flex-1 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition"
+                className="flex-1 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
               />
               <button
                 type="submit"
-                className="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition shrink-0 shadow-md"
+                className="p-2 bg-brand-blue hover:bg-bright-blue text-white rounded-full transition shrink-0 shadow-md cursor-pointer"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -196,7 +199,7 @@ export default function AiChatbot({ onOpenConsultation }) {
                   setIsOpen(false);
                   onOpenConsultation();
                 }}
-                className="text-blue-600 font-bold hover:underline"
+                className="text-bright-blue font-bold hover:underline cursor-pointer"
               >
                 Book Consultation
               </button>

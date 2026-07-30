@@ -1,5 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #4A72EB;
+  --color-bright-blue: #2196E8;
+  --color-light-blue: #A9C0F5;
+  --color-neutral-dark: #000000;
+  --color-neutral-gray: #333333;
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-zen: 'Zen Dots', sans-serif;
+}
 
 html {
   scroll-behavior: smooth;
@@ -7,7 +16,15 @@ html {
 }
 
 .font-condensed {
-  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.font-zen {
+  font-family: 'Zen Dots', sans-serif;
 }
 
 :root {
@@ -30,7 +47,7 @@ body {
 
 /* Custom Brand Colors & Gradients */
 .bg-brand-blue {
-  background-color: #0052FF;
+  background-color: #4A72EB;
 }
 
 @media (pointer: fine) {
@@ -40,11 +57,11 @@ body {
 }
 
 .text-brand-blue {
-  color: #0052FF;
+  color: #4A72EB;
 }
 
 .border-brand-blue {
-  border-color: #0052FF;
+  border-color: #4A72EB;
 }
 
 .bg-dark-navy {
@@ -141,4 +158,19 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   animation: shimmer 5s linear infinite;
+}
+
+@keyframes pingSlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-ping-slow {
+  animation: pingSlow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
