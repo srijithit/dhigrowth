@@ -6,6 +6,24 @@ import {
 } from 'lucide-react';
 
 export default function Footer() {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const footerRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.05 }
+    );
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   const handleWhatsAppClick = (e) => {
     e.preventDefault();
     const number = '919361088012';
@@ -103,8 +121,17 @@ export default function Footer() {
         </div>
 
         {/* Giant Watermark Text Background */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 w-full text-center pointer-events-none select-none z-0">
-          <span className="text-[10vw] font-black tracking-widest text-white/[0.07] font-bebas uppercase leading-none block">
+        <div 
+          ref={footerRef}
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none z-0 transition-all duration-[1500ms] ease-out"
+          style={{
+            transform: isVisible 
+              ? 'translate3d(-50%, 33.33%, 0) scale(1)' 
+              : 'translate3d(-50%, 85%, 0) scale(0.9)',
+            opacity: isVisible ? 0.07 : 0
+          }}
+        >
+          <span className="text-[10vw] font-black tracking-widest text-white font-bebas uppercase leading-none block">
             DHI GROWTH
           </span>
         </div>
