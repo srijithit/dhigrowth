@@ -53,15 +53,15 @@ export default function ConsultationModal({ isOpen, onClose, preselectedService 
       service_needed: formData.service 
     });
 
-    const text = `*New Consultation Request — DhiGrowth*%0A%0A` +
-      `👤 *Name:* ${formData.name}%0A` +
-      `📞 *Phone:* ${formData.phone}%0A` +
-      `✉️ *Email:* ${formData.email}%0A` +
-      `🏢 *Company:* ${formData.company || 'N/A'}%0A` +
-      `🛠️ *Service:* ${formData.service}%0A` +
+    const text = `*New Consultation Request — DhiGrowth*\n\n` +
+      `👤 *Name:* ${formData.name}\n` +
+      `📞 *Phone:* ${formData.phone}\n` +
+      `✉️ *Email:* ${formData.email}\n` +
+      `🏢 *Company:* ${formData.company || 'N/A'}\n` +
+      `🛠️ *Service:* ${formData.service}\n` +
       `🎯 *Goals:* ${formData.message || 'N/A'}`;
 
-    const whatsappUrl = `https://wa.me/919361088012?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=919361088012&text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
   };
 
