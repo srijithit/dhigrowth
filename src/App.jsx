@@ -41,8 +41,8 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Floating AI Chatbot Widget */}
-      <AiChatbot onOpenConsultation={() => setIsConsultationOpen(true)} />
+      {/* Floating AI Chatbot Widget (Disabled by default, uncomment to enable) */}
+      {/* <AiChatbot onOpenConsultation={() => setIsConsultationOpen(true)} /> */}
 
       {/* Consultation Request Modal */}
       <ConsultationModal 
