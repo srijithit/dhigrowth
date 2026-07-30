@@ -2,10 +2,6 @@ import React from 'react';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 
 export default function CtaBanner({ onOpenConsultation }) {
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/919361088012?text=Hi%20DhiGrowth,%20I%20want%20to%20grow%20my%20business%20in%20India!', '_blank');
-  };
-
   return (
     <section className="relative bg-gradient-to-r from-light-blue/20 via-white to-light-blue/10 text-slate-900 py-20 overflow-hidden shadow-sm border-y border-slate-200/60">
       
@@ -45,13 +41,15 @@ export default function CtaBanner({ onOpenConsultation }) {
               <ArrowRight className="w-4 h-4" />
             </button>
 
-            <button
-              onClick={handleWhatsApp}
-              className="px-8 py-4 bg-transparent hover:bg-brand-blue/5 border-2 border-brand-blue/30 hover:border-brand-blue text-brand-blue font-bold text-sm uppercase tracking-wider rounded-xl transition shadow-md flex items-center justify-center space-x-2.5 cursor-pointer"
+            <a
+              href="https://wa.me/919361088012?text=Hi%20DhiGrowth,%20I%20want%20to%20grow%20my%20business%20in%20India!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-transparent hover:bg-brand-blue/5 border-2 border-brand-blue/30 hover:border-brand-blue text-brand-blue font-bold text-sm uppercase tracking-wider rounded-xl transition shadow-md flex items-center justify-center space-x-2.5"
             >
               <MessageCircle className="w-5 h-5 fill-current text-brand-blue" />
               <span>WhatsApp Us Now</span>
-            </button>
+            </a>
           </div>
 
         </div>
