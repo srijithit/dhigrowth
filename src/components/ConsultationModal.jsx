@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, CheckCircle, Send, Phone, Mail, User, Building } from 'lucide-react';
 
-export default function ConsultationModal({ isOpen, onClose }) {
+export default function ConsultationModal({ isOpen, onClose, preselectedService }) {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -11,6 +11,36 @@ export default function ConsultationModal({ isOpen, onClose }) {
     service: 'Website Development',
     message: ''
   });
+
+  React.useEffect(() => {
+    if (isOpen) {
+      let serviceOption = 'Website Development';
+      if (preselectedService) {
+        const title = preselectedService;
+        if (title.includes('Website')) {
+          serviceOption = 'Website Development';
+        } else if (title.includes('Application')) {
+          serviceOption = 'Application Development';
+        } else if (title.includes('AI') || title.includes('Automation')) {
+          serviceOption = 'AI Automation & Solutions';
+        } else if (title.includes('SEO') || title.includes('Marketing') || title.includes('Development')) {
+          if (title.includes('WhatsApp')) {
+            serviceOption = 'WhatsApp Marketing';
+          } else if (title.includes('Meta') || title.includes('Ads')) {
+            serviceOption = 'Meta & Google Ads';
+          } else {
+            serviceOption = 'Digital Marketing & SEO';
+          }
+        } else if (title.includes('Video') || title.includes('Shoot')) {
+          serviceOption = 'Video Editing & Ad Shoot';
+        }
+      }
+      setFormData(prev => ({
+        ...prev,
+        service: serviceOption
+      }));
+    }
+  }, [isOpen, preselectedService]);
 
   if (!isOpen) return null;
 

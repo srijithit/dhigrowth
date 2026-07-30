@@ -18,16 +18,22 @@ import AiChatbot from './components/AiChatbot';
 export default function App() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
+  const [preselectedService, setPreselectedService] = useState('');
+
+  const handleOpenGeneralConsultation = () => {
+    setPreselectedService('');
+    setIsConsultationOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-brand-blue selection:text-white">
       <CustomCursor />
       {/* Top Navbar */}
-      <Navbar onOpenConsultation={() => setIsConsultationOpen(true)} />
+      <Navbar onOpenConsultation={handleOpenGeneralConsultation} />
 
       {/* Main Content Sections */}
       <main>
-        <Hero onOpenConsultation={() => setIsConsultationOpen(true)} />
+        <Hero onOpenConsultation={handleOpenGeneralConsultation} />
         <StatsBar />
         <WhoWeAre />
         <ServicesGrid onSelectService={(service) => setSelectedService(service)} />
@@ -35,26 +41,30 @@ export default function App() {
         <ProcessSection />
         <IndustriesSection />
         <Testimonials />
-        <CtaBanner onOpenConsultation={() => setIsConsultationOpen(true)} />
+        <CtaBanner onOpenConsultation={handleOpenGeneralConsultation} />
       </main>
 
       {/* Footer */}
       <Footer />
 
       {/* Floating AI Chatbot Widget (Disabled by default, uncomment to enable) */}
-      {/* <AiChatbot onOpenConsultation={() => setIsConsultationOpen(true)} /> */}
+      {/* <AiChatbot onOpenConsultation={handleOpenGeneralConsultation} /> */}
 
       {/* Consultation Request Modal */}
       <ConsultationModal 
         isOpen={isConsultationOpen} 
         onClose={() => setIsConsultationOpen(false)} 
+        preselectedService={preselectedService}
       />
 
       {/* Service Detail Modal */}
       <ServiceDetailModal 
         service={selectedService} 
         onClose={() => setSelectedService(null)} 
-        onBookConsultation={() => setIsConsultationOpen(true)}
+        onBookConsultation={() => {
+          setPreselectedService(selectedService.title);
+          setIsConsultationOpen(true);
+        }}
       />
     </div>
   );
