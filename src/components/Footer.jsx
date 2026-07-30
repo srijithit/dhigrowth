@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-200/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-12 border-b border-slate-200/80">
           
           {/* Column 1: Brand Info */}
           <div className="space-y-4 text-left">
@@ -39,21 +39,6 @@ export default function Footer() {
             <p className="text-xs text-slate-600 leading-relaxed max-w-xs font-sans">
               India's Leading Digital Growth Partner helping businesses scale with cutting-edge web, app, AI, and marketing solutions.
             </p>
-          </div>
-
-          {/* Column 3: Services */}
-          <div className="text-left">
-            <h4 className="text-sm font-bebas font-bold uppercase tracking-wider text-slate-800 mb-4">
-              Services
-            </h4>
-            <ul className="space-y-2.5 text-xs font-sans">
-              <li><a href="#services" className="hover:text-bright-blue transition">Website Development</a></li>
-              <li><a href="#services" className="hover:text-bright-blue transition">Application Development</a></li>
-              <li><a href="#services" className="hover:text-bright-blue transition">AI & Automation</a></li>
-              <li><a href="#services" className="hover:text-bright-blue transition">Digital Marketing</a></li>
-              <li><a href="#services" className="hover:text-bright-blue transition">SEO</a></li>
-              <li><a href="#services" className="hover:text-bright-blue transition">Ads Shooting & Editing</a></li>
-            </ul>
           </div>
 
           {/* Column 4: Contact Us */}
