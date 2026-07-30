@@ -217,10 +217,12 @@ export default function ConsultationModal({ isOpen, onClose, preselectedService 
 
               <button
                 type="submit"
-                className="w-full py-3.5 bg-brand-blue hover:bg-bright-blue text-white font-bold rounded-xl shadow-lg shadow-brand-blue/30 flex items-center justify-center space-x-2 transition transform active:scale-95 cursor-pointer"
+                className="w-full py-3.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg shadow-green-600/30 flex items-center justify-center space-x-2.5 transition transform active:scale-95 cursor-pointer"
               >
-                <span>Submit Consultation Request</span>
-                <Send className="w-4 h-4" />
+                <svg className="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.498 4.76 1.499 5.263.003 9.616-4.248 9.62-9.48.002-2.533-.986-4.914-2.784-6.712C16.446 2.662 14.062 1.675 11.53 1.67c-5.266 0-9.618 4.25-9.622 9.48-.001 1.705.474 3.292 1.446 4.708L2.34 20.25l4.307-1.096zM17.65 14.659c-.318-.16-1.884-.93-2.176-1.036-.293-.107-.507-.16-.72.16-.213.32-.826 1.036-1.012 1.25-.187.213-.373.24-.69.08-.319-.16-1.348-.497-2.568-1.585-.949-.847-1.59-1.893-1.776-2.213-.187-.32-.02-.493.14-.652.143-.143.319-.373.479-.56.16-.187.213-.32.319-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.734-.986-2.373-.26-.626-.525-.541-.72-.55-.187-.01-.4-.01-.613-.01-.213 0-.56.08-.853.4-.293.32-1.12 1.1-1.12 2.68 0 1.58 1.147 3.11 1.307 3.323.16.213 2.257 3.447 5.47 4.837.763.33 1.359.527 1.823.674.767.243 1.464.21 2.016.128.614-.092 1.884-.77 2.15-1.517.266-.747.266-1.387.187-1.517-.079-.13-.293-.21-.612-.37z"/>
+                </svg>
+                <span>Submit & Send on WhatsApp</span>
               </button>
             </form>
           )}
