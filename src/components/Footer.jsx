@@ -134,11 +134,11 @@ export default function Footer() {
 
         {/* Giant Watermark Text Background */}
         <div 
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none z-0 transition-all duration-[1600ms] delay-[150ms] ease-out"
+          className="absolute bottom-0 left-0 w-full text-center pointer-events-none select-none z-0 transition-all duration-[1600ms] delay-[150ms] ease-out"
           style={{
             transform: isVisible 
-              ? 'translate3d(-50%, 33.33%, 0) scale(1)' 
-              : 'translate3d(-50%, 85%, 0) scale(0.9)',
+              ? 'translate3d(0, 33.33%, 0) scale(1)' 
+              : 'translate3d(0, 85%, 0) scale(0.9)',
             opacity: isVisible ? 0.07 : 0
           }}
         >
