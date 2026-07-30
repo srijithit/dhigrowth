@@ -12,13 +12,13 @@ import {
 
 export default function IndustriesSection() {
   const industries = [
-    { name: "Textile & Manufacturing", icon: <Factory className="w-6 h-6 text-brand-blue" /> },
-    { name: "Retail & E-commerce", icon: <ShoppingCart className="w-6 h-6 text-brand-blue" /> },
-    { name: "Healthcare & Wellness", icon: <HeartPulse className="w-6 h-6 text-brand-blue" /> },
-    { name: "Education & Training", icon: <GraduationCap className="w-6 h-6 text-brand-blue" /> },
-    { name: "Hospitality & Travel", icon: <Hotel className="w-6 h-6 text-brand-blue" /> },
-    { name: "Real Estate & Construction", icon: <Building2 className="w-6 h-6 text-brand-blue" /> },
-    { name: "Technology Startups", icon: <Rocket className="w-6 h-6 text-brand-blue" /> },
+    { name: "Textile & Manufacturing", icon: Factory },
+    { name: "Retail & E-commerce", icon: ShoppingCart },
+    { name: "Healthcare & Wellness", icon: HeartPulse },
+    { name: "Education & Training", icon: GraduationCap },
+    { name: "Hospitality & Travel", icon: Hotel },
+    { name: "Real Estate & Construction", icon: Building2 },
+    { name: "Technology Startups", icon: Rocket },
   ];
 
   return (
@@ -50,22 +50,23 @@ export default function IndustriesSection() {
           {/* Right Column Grid */}
           <div className="lg:col-span-7">
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 divide-x divide-slate-100 gap-y-6 lg:gap-y-0">
-              {industries.map((ind, idx) => (
-                <div
-                  key={idx}
-                  className="px-3 flex flex-col items-center text-center group cursor-pointer hover:-translate-y-1.5 transition duration-300"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-light-blue/10 border border-light-blue/20 flex items-center justify-center mb-3 group-hover:bg-brand-blue group-hover:border-brand-blue transition duration-300 shadow-sm">
-                    {React.cloneElement(ind.icon, {
-                      className: "w-6 h-6 text-brand-blue group-hover:text-white transition duration-300"
-                    })}
+              {industries.map((ind, idx) => {
+                const IconComponent = ind.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="px-3 flex flex-col items-center text-center group cursor-pointer hover:-translate-y-1.5 transition duration-300"
+                  >
+                    <div className="w-14 h-14 rounded-2xl bg-light-blue/10 border border-light-blue/20 flex items-center justify-center mb-3 group-hover:bg-brand-blue group-hover:border-brand-blue transition duration-300 shadow-sm">
+                      <IconComponent className="w-6 h-6 text-brand-blue group-hover:text-white transition duration-300" />
+                    </div>
+                    
+                    <span className="text-xs font-bold text-black leading-snug tracking-tight font-sans">
+                      {ind.name}
+                    </span>
                   </div>
-                  
-                  <span className="text-xs font-bold text-black leading-snug tracking-tight font-sans">
-                    {ind.name}
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
