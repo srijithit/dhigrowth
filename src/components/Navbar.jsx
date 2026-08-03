@@ -28,7 +28,7 @@ export default function Navbar({ onOpenConsultation }) {
               onClick={onOpenConsultation}
               className="px-4 py-2 sm:px-5 sm:py-2.5 bg-brand-blue hover:bg-bright-blue text-white font-bold text-[11px] sm:text-xs uppercase tracking-wider rounded-lg shadow-md shadow-brand-blue/20 hover:shadow-lg transition transform hover:-translate-y-0.5 cursor-pointer"
             >
-              Get a Free Consultation
+              Claim Free Audit
             </button>
           </div>
 

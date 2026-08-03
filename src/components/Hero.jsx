@@ -6,6 +6,7 @@ import {
   Megaphone,
   TrendingUp
 } from 'lucide-react';
+import { trackAdEvent } from '../utils/analytics';
 
 export default function Hero({ onOpenConsultation }) {
   return (
@@ -49,13 +50,13 @@ export default function Hero({ onOpenConsultation }) {
 
             {/* Main Headline */}
             <h1 className="font-bebas text-5xl sm:text-6xl md:text-[80px] font-bold text-slate-900 leading-[0.9] tracking-wider uppercase">
-              WE DON'T JUST MARKET.<br />
-              WE DRIVE <span className="text-bright-blue">REAL GROWTH</span>.
+              SCALE YOUR BUSINESS WITH AN<br />
+              <span className="text-bright-blue">AI-POWERED GROWTH PARTNER</span>
             </h1>
 
             {/* Services Kicker */}
             <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-500 font-zen block">
-              Web, App, AI & Marketing Solutions
+              Get More Qualified Leads, Better Websites & Smarter Automation Under One Roof
             </h2>
 
             {/* Paragraph Body */}
@@ -69,15 +70,37 @@ export default function Hero({ onOpenConsultation }) {
                 onClick={onOpenConsultation}
                 className="px-8 py-4 bg-brand-blue hover:bg-bright-blue text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg shadow-brand-blue/20 transition transform hover:-translate-y-0.5 text-center cursor-pointer"
               >
-                Get a Free Consultation
+                Get My Free Growth Audit
               </button>
 
               <a
-                href="#services"
-                className="px-8 py-4 bg-transparent hover:bg-brand-blue/5 text-brand-blue border-2 border-brand-blue/30 hover:border-brand-blue font-bold text-sm uppercase tracking-wider rounded-xl transition text-center"
+                href="https://api.whatsapp.com/send?phone=919361088012&text=Hi%20DhiGrowth%2C%20I%20want%20to%20grow%20my%20business%20in%20India%21"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackAdEvent('Contact', { method: 'WhatsApp', placement: 'Hero' })}
+                className="px-8 py-4 bg-transparent hover:bg-brand-blue/5 text-brand-blue border-2 border-brand-blue/30 hover:border-brand-blue font-bold text-sm uppercase tracking-wider rounded-xl transition text-center flex items-center justify-center space-x-2"
               >
-                Explore Our Services
+                <svg className="w-4 h-4 fill-current text-brand-blue" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.498 4.76 1.499 5.263.003 9.616-4.248 9.62-9.48.002-2.533-.986-4.914-2.784-6.712C16.446 2.662 14.062 1.675 11.53 1.67c-5.266 0-9.618 4.25-9.622 9.48-.001 1.705.474 3.292 1.446 4.708L2.34 20.25l4.307-1.096zM17.65 14.659c-.318-.16-1.884-.93-2.176-1.036-.293-.107-.507-.16-.72.16-.213.32-.826 1.036-1.012 1.25-.187.213-.373.24-.69.08-.319-.16-1.348-.497-2.568-1.585-.949-.847-1.59-1.893-1.776-2.213-.187-.32-.02-.493.14-.652.143-.143.319-.373.479-.56.16-.187.213-.32.319-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.734-.986-2.373-.26-.626-.525-.541-.72-.55-.187-.01-.4-.01-.613-.01-.213 0-.56.08-.853.4-.293.32-1.12 1.1-1.12 2.68 0 1.58 1.147 3.11 1.307 3.323.16.213 2.257 3.447 5.47 4.837.763.33 1.359.527 1.823.674.767.243 1.464.21 2.016.128.614-.092 1.884-.77 2.15-1.517.266-.747.266-1.387.187-1.517-.079-.13-.293-.21-.612-.37z"/>
+                </svg>
+                <span>Chat on WhatsApp</span>
               </a>
+            </div>
+
+            {/* Above-the-fold Social Proof Trust Badge */}
+            <div className="pt-2 flex items-center space-x-3 text-slate-700 font-sans text-xs">
+              <div className="flex -space-x-2">
+                <img className="w-8.5 h-8.5 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Client 1" />
+                <img className="w-8.5 h-8.5 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Client 2" />
+                <img className="w-8.5 h-8.5 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=100&h=100&q=80" alt="Client 3" />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-center space-x-1">
+                  <div className="flex text-amber-500 text-sm">★★★★★</div>
+                  <span className="font-bold text-slate-800 text-[11px] sm:text-xs">4.9/5 Google Rating</span>
+                </div>
+                <span className="text-slate-500 text-[10px] sm:text-[11px]">Trusted by 100+ Businesses scaled across India</span>
+              </div>
             </div>
 
           </div>

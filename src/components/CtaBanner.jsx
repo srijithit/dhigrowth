@@ -42,7 +42,7 @@ export default function CtaBanner({ onOpenConsultation }) {
               onClick={onOpenConsultation}
               className="px-8 py-4 bg-brand-blue hover:bg-bright-blue text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg shadow-brand-blue/20 transition transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2 cursor-pointer"
             >
-              <span>Book a Free Consultation</span>
+              <span>Get My Free Growth Audit</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 

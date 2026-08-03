@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import { trackAdEvent } from './utils/analytics';
@@ -27,6 +27,20 @@ export default function App() {
     trackAdEvent('InitiateCheckout', { placement: 'General CTA' });
   };
 
+  const [showStickyCta, setShowStickyCta] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowStickyCta(true);
+      } else {
+        setShowStickyCta(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-brand-blue selection:text-white">
       <CustomCursor />
@@ -37,12 +51,12 @@ export default function App() {
       <main>
         <Hero onOpenConsultation={handleOpenGeneralConsultation} />
         <StatsBar />
-        <WhoWeAre />
-        <ServicesGrid onSelectService={(service) => setSelectedService(service)} />
+        <Testimonials />
         <WhyChooseUs />
+        <ServicesGrid onSelectService={(service) => setSelectedService(service)} />
         <ProcessSection />
         <IndustriesSection />
-        <Testimonials />
+        <WhoWeAre />
         <CtaBanner onOpenConsultation={handleOpenGeneralConsultation} />
       </main>
 
@@ -75,6 +89,24 @@ export default function App() {
           }}
         />
       </React.Suspense>
+
+      {/* Sticky Mobile CTA Bar (Slides up below the fold) */}
+      <div 
+        className={`fixed bottom-0 left-0 right-0 z-30 p-4 bg-white/95 backdrop-blur-md border-t border-slate-200/85 shadow-lg flex items-center justify-between gap-3 lg:hidden transition-all duration-300 ${
+          showStickyCta ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col text-left">
+          <span className="text-[9px] font-bold text-bright-blue uppercase font-zen leading-none">Limited Audit Slots</span>
+          <span className="text-xs font-bold text-slate-800 font-sans mt-1">Get Your Free Growth Audit</span>
+        </div>
+        <button
+          onClick={handleOpenGeneralConsultation}
+          className="px-5 py-2.5 bg-brand-blue hover:bg-bright-blue text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-md transition cursor-pointer"
+        >
+          Claim Now
+        </button>
+      </div>
     </div>
   );
 }

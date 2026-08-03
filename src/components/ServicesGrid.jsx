@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Code, 
   Smartphone, 
@@ -16,10 +16,13 @@ import {
 } from 'lucide-react';
 
 export default function ServicesGrid({ onSelectService }) {
+  const [activeTab, setActiveTab] = useState('all');
+
   const services = [
     {
       id: "01",
       title: "Website Development",
+      category: "tech",
       icon: Code,
       description: "Custom, responsive, SEO-ready websites built for speed and conversions.",
       features: [
@@ -33,6 +36,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "02",
       title: "Application Development",
+      category: "tech",
       icon: Smartphone,
       description: "iOS, Android & cross-platform apps designed for seamless user experiences.",
       features: [
@@ -46,6 +50,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "03",
       title: "AI Development",
+      category: "tech",
       icon: BrainCircuit,
       description: "Smart AI products — chatbots, recommendation engines & custom ML models.",
       features: [
@@ -59,6 +64,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "04",
       title: "AI Automation",
+      category: "growth",
       icon: Bot,
       description: "Automate repetitive tasks and workflows using intelligent AI solutions.",
       features: [
@@ -72,6 +78,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "05",
       title: "WhatsApp Marketing",
+      category: "marketing",
       icon: MessageSquare,
       description: "High-engagement campaigns via WhatsApp Business API to drive sales.",
       features: [
@@ -85,6 +92,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "06",
       title: "Business Automation",
+      category: "growth",
       icon: Cog,
       description: "Streamline operations, reduce costs & boost efficiency with smart automation.",
       features: [
@@ -98,6 +106,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "07",
       title: "Business Development",
+      category: "growth",
       icon: TrendingUp,
       description: "Strategic consulting and execution to expand your market presence.",
       features: [
@@ -111,6 +120,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "08",
       title: "SEO",
+      category: "marketing",
       icon: Search,
       description: "Rank higher on Google with technical SEO, content strategy & link building.",
       features: [
@@ -124,6 +134,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "09",
       title: "Digital Marketing",
+      category: "marketing",
       icon: Megaphone,
       description: "Full-funnel digital campaigns that attract, engage and convert customers.",
       features: [
@@ -137,6 +148,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "10",
       title: "Social Media Marketing",
+      category: "marketing",
       icon: Share2,
       description: "Build your brand and community across Instagram, Facebook & LinkedIn.",
       features: [
@@ -150,6 +162,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "11",
       title: "Meta & Google Ads",
+      category: "marketing",
       icon: Target,
       description: "Targeted paid advertising to maximise ROAS across Google and Meta platforms.",
       features: [
@@ -163,6 +176,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "12",
       title: "Ads Shooting",
+      category: "growth",
       icon: Video,
       description: "Professional ad film production — creative concepts to camera-ready content.",
       features: [
@@ -176,6 +190,7 @@ export default function ServicesGrid({ onSelectService }) {
     {
       id: "13",
       title: "Video Editing",
+      category: "growth",
       icon: Film,
       description: "High-quality video editing for reels, ads, brand videos & social content.",
       features: [
@@ -188,26 +203,52 @@ export default function ServicesGrid({ onSelectService }) {
     }
   ];
 
+  const filteredServices = activeTab === 'all' 
+    ? services 
+    : services.filter(s => s.category === activeTab);
+
   return (
     <section id="services" className="py-16 md:py-24 bg-slate-50 text-neutral-dark border-y border-slate-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-left mb-14 max-w-3xl">
+        <div className="text-left mb-8 max-w-3xl">
           <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-bright-blue font-zen mb-2 block">
-            Our Services
+            Our Solutions
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bebas font-bold text-black tracking-wide leading-tight">
             13 SOLUTIONS. 1 GOAL — YOUR <span className="text-bright-blue">GROWTH</span>.
           </h2>
           <p className="text-neutral-gray text-sm sm:text-base mt-2 font-normal">
-            DhiGrowth provides a comprehensive suite of digital growth services to scale your business online. Click on any service card below to view detailed key features and deliverables.
+            DhiGrowth provides a comprehensive suite of digital growth services to scale your business online. Filter services by category below and click any card to view deliverables.
           </p>
         </div>
 
+        {/* Category Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-slate-200/60 pb-6">
+          {[
+            { id: 'all', label: 'All Solutions' },
+            { id: 'tech', label: 'Tech & AI' },
+            { id: 'marketing', label: 'Marketing & Ads' },
+            { id: 'growth', label: 'Growth & Automation' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition duration-200 cursor-pointer ${
+                activeTab === tab.id
+                  ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/20'
+                  : 'bg-white border border-slate-200 text-slate-600 hover:border-slate-300'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         {/* Services Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-          {services.map((service) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 min-h-[400px]">
+          {filteredServices.map((service) => (
             <div
               key={service.id}
               onClick={() => onSelectService(service)}
@@ -242,7 +283,7 @@ export default function ServicesGrid({ onSelectService }) {
               {/* View details action indicator */}
               <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-brand-blue group-hover:text-bright-blue transition">
-                  View Features
+                  See Deliverables
                 </span>
                 <span className="text-xs text-slate-300 group-hover:text-bright-blue group-hover:translate-x-1.5 transition duration-300">
                   →
