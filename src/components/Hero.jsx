@@ -89,13 +89,8 @@ export default function Hero({ onOpenConsultation }) {
 
             {/* Above-the-fold Social Proof Trust Badge */}
             <div className="pt-2 flex items-center space-x-3 text-slate-700 font-sans text-xs">
-              <div className="flex -space-x-2">
-                <img className="w-8.5 h-8.5 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Client 1" />
-                <img className="w-8.5 h-8.5 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Client 2" />
-                <img className="w-8.5 h-8.5 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=100&h=100&q=80" alt="Client 3" />
-              </div>
               <div className="flex flex-col">
-                <div className="flex items-center space-x-1">
+                <div className="flex items-center space-x-1.5">
                   <div className="flex text-amber-500 text-sm">★★★★★</div>
                   <span className="font-bold text-slate-800 text-[11px] sm:text-xs">4.9/5 Google Rating</span>
                 </div>
