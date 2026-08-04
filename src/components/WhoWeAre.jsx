@@ -68,6 +68,41 @@ export default function WhoWeAre() {
 
         </div>
 
+        {/* Founder Spotlight / Meet the Founder */}
+        <div className="mt-16 pt-16 border-t border-slate-100 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-4 flex justify-center">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-brand-blue/20 shadow-xl group">
+              <img 
+                src="/dhinesh.png" 
+                alt="Dhinesh - Founder of DhiGrowth"
+                className="w-full h-full object-cover filter brightness-[0.98] transition group-hover:scale-105 duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-3">
+                <span className="text-white text-xs font-bold font-sans">Dhinesh</span>
+              </div>
+            </div>
+          </div>
+          <div className="md:col-span-8 text-left space-y-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-bright-blue font-zen block">
+              Meet the Founder
+            </span>
+            <h3 className="text-3xl font-bebas font-bold text-black tracking-wide leading-tight">
+              Dhinesh
+            </h3>
+            <p className="text-neutral-gray text-sm leading-relaxed font-normal">
+              "We started DhiGrowth with a simple mission: to build technology and marketing systems that generate actual revenue, not just vanity metrics. E-commerce brands, local manufacturing businesses in Coimbatore, and tech companies across India don't buy SEO or website rebuilds—they buy growth. That's why we audit your entire sales funnel before recommending a single service."
+            </p>
+            <div className="flex items-center space-x-6 pt-1">
+              <div className="text-xs text-slate-500 font-sans">
+                <span className="font-bold text-slate-700">Email:</span> <a href="mailto:dhinesh@dhigrowth.com" className="text-brand-blue hover:underline">dhinesh@dhigrowth.com</a>
+              </div>
+              <div className="text-xs text-slate-500 font-sans">
+                <span className="font-bold text-slate-700">LinkedIn:</span> <a href="https://www.linkedin.com/in/dinesh-gopalan/" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">Connect on LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
