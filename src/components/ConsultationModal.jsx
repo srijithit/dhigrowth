@@ -54,12 +54,12 @@ export default function ConsultationModal({ isOpen, onClose, preselectedService 
     });
 
     const text = `*New Consultation Request — DhiGrowth*\n\n` +
-      `\u{1F464} *Name:* ${formData.name}\n` +
-      `\u{1F4DE} *Phone:* ${formData.phone}\n` +
-      `\u{2709}\u{FE0F} *Email:* ${formData.email}\n` +
-      `\u{1F3E2} *Company:* ${formData.company || 'N/A'}\n` +
-      `\u{1F6E0}\u{FE0F} *Service:* ${formData.service}\n` +
-      `\u{1F3AF} *Goals:* ${formData.message || 'N/A'}`;
+      `*Name:* ${formData.name}\n` +
+      `*Phone:* ${formData.phone}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Company:* ${formData.company || 'N/A'}\n` +
+      `*Service:* ${formData.service}\n` +
+      `*Goals:* ${formData.message || 'N/A'}`;
 
     const whatsappUrl = `https://api.whatsapp.com/send?phone=919361088012&text=${encodeURIComponent(text)}`;
     window.location.href = whatsappUrl;
