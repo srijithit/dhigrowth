@@ -83,6 +83,7 @@ export default function Hero({ onOpenConsultation }) {
                   `\u{1F6E0}\u{FE0F} *Service:* ${service}\n` +
                   `\u{1F3AF} *Goals:* Hero inline form request`;
 
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=919361088012&text=${encodeURIComponent(text)}`;
                 window.location.href = whatsappUrl;
               }}
               className="mt-6 p-5 bg-slate-50 border border-slate-200/80 rounded-2xl max-w-md shadow-sm space-y-3.5 font-sans relative z-10"
