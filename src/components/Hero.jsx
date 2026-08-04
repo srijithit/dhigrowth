@@ -60,80 +60,32 @@ export default function Hero({ onOpenConsultation }) {
             </h2>
 
             {/* Paragraph Body */}
-            <p className="text-slate-600 text-sm leading-relaxed max-w-xl font-normal">
-              DhiGrowth helps businesses across India scale faster with high-performance web development, mobile apps, AI automation, and result-driven Meta & Google Ads.
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+              DhiGrowth is a full-service digital agency helping businesses across India scale faster with cutting-edge website development, mobile app development, AI automation, and result-driven digital marketing. From Meta Ads and Google Ads to WhatsApp marketing, SEO, and video production — we build everything your business needs to grow online.
             </p>
 
-            {/* Inline Above-The-Fold Lead Form */}
-            <form 
-              onSubmit={(e) => {
-                e.preventDefault();
-                const name = e.target.name.value;
-                const phone = e.target.phone.value;
-                const service = e.target.service.value;
-                
-                trackAdEvent('Lead', { 
-                  content_name: 'Free Strategy Session Request (Hero Inline)', 
-                  service_needed: service 
-                });
-
-                const text = `*New Growth Audit Request (Hero Inline) — DhiGrowth*\n\n` +
-                  `\u{1F464} *Name:* ${name}\n` +
-                  `\u{1F4DE} *Phone:* ${phone}\n` +
-                  `\u{1F6E0}\u{FE0F} *Service:* ${service}\n` +
-                  `\u{1F3AF} *Goals:* Hero inline form request`;
-
-                const whatsappUrl = `https://api.whatsapp.com/send?phone=919361088012&text=${encodeURIComponent(text)}`;
-                window.location.href = whatsappUrl;
-              }}
-              className="mt-6 p-5 bg-slate-50 border border-slate-200/80 rounded-2xl max-w-md shadow-sm space-y-3.5 font-sans relative z-10"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wide">
-                  Claim Your Free Digital Audit & Roadmap
-                </span>
-                <span className="bg-red-100 text-red-700 text-[9px] font-bold px-2 py-0.5 rounded-full uppercase animate-pulse">
-                  Only 3 slots left
-                </span>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <input 
-                  type="text" 
-                  name="name"
-                  placeholder="Your Name *" 
-                  required 
-                  className="w-full p-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
-                />
-                <input 
-                  type="tel" 
-                  name="phone"
-                  placeholder="Phone Number *" 
-                  required 
-                  className="w-full p-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
-                />
-              </div>
-              <select 
-                name="service"
-                required
-                className="w-full p-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-bright-blue focus:bg-white transition"
-              >
-                <option value="">Select Service Needed *</option>
-                <option value="Website Development">Website Development</option>
-                <option value="Application Development">Application Development</option>
-                <option value="AI Development & Automation">AI Development & Automation</option>
-                <option value="Meta & Google Ads">Meta & Google Ads</option>
-                <option value="WhatsApp & SEO Marketing">WhatsApp & SEO Marketing</option>
-              </select>
+            {/* Action CTA Buttons */}
+            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 relative z-10">
               <button
-                type="submit"
-                className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md shadow-green-600/20 flex items-center justify-center space-x-2 transition transform active:scale-95 cursor-pointer"
+                onClick={onOpenConsultation}
+                className="px-8 py-4 bg-brand-blue hover:bg-bright-blue text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg shadow-brand-blue/20 transition transform hover:-translate-y-0.5 text-center cursor-pointer"
               >
-                <svg className="w-3.5 h-3.5 fill-current text-white" viewBox="0 0 24 24">
+                Get My Free Growth Audit
+              </button>
+
+              <a
+                href="https://api.whatsapp.com/send?phone=919361088012&text=Hi%20DhiGrowth%2C%20I%20want%20to%20grow%20my%20business%20in%20India%21"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackAdEvent('Contact', { method: 'WhatsApp', placement: 'Hero' })}
+                className="px-8 py-4 bg-transparent hover:bg-brand-blue/5 text-brand-blue border-2 border-brand-blue/30 hover:border-brand-blue font-bold text-sm uppercase tracking-wider rounded-xl transition text-center flex items-center justify-center space-x-2"
+              >
+                <svg className="w-4 h-4 fill-current text-brand-blue" viewBox="0 0 24 24">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.498 4.76 1.499 5.263.003 9.616-4.248 9.62-9.48.002-2.533-.986-4.914-2.784-6.712C16.446 2.662 14.062 1.675 11.53 1.67c-5.266 0-9.618 4.25-9.622 9.48-.001 1.705.474 3.292 1.446 4.708L2.34 20.25l4.307-1.096zM17.65 14.659c-.318-.16-1.884-.93-2.176-1.036-.293-.107-.507-.16-.72.16-.213.32-.826 1.036-1.012 1.25-.187.213-.373.24-.69.08-.319-.16-1.348-.497-2.568-1.585-.949-.847-1.59-1.893-1.776-2.213-.187-.32-.02-.493.14-.652.143-.143.319-.373.479-.56.16-.187.213-.32.319-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.734-.986-2.373-.26-.626-.525-.541-.72-.55-.187-.01-.4-.01-.613-.01-.213 0-.56.08-.853.4-.293.32-1.12 1.1-1.12 2.68 0 1.58 1.147 3.11 1.307 3.323.16.213 2.257 3.447 5.47 4.837.763.33 1.359.527 1.823.674.767.243 1.464.21 2.016.128.614-.092 1.884-.77 2.15-1.517.266-.747.266-1.387.187-1.517-.079-.13-.293-.21-.612-.37z"/>
                 </svg>
-                <span>Claim My Free Audit on WhatsApp</span>
-              </button>
-            </form>
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
 
             {/* Above-the-fold Social Proof Trust Badge */}
             <div className="pt-2 flex items-center space-x-3 text-slate-700 font-sans text-xs">
