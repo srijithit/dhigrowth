@@ -53,7 +53,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedService 
       service_needed: formData.service 
     });
 
-    const text = `*New Growth Audit Request — DhiGrowth*\n\n` +
+    const text = `*New Consultation Request — DhiGrowth*\n\n` +
       `\u{1F464} *Name:* ${formData.name}\n` +
       `\u{1F4DE} *Phone:* ${formData.phone}\n` +
       `\u{2709}\u{FE0F} *Email:* ${formData.email}\n` +
