@@ -61,6 +61,7 @@ export default function ConsultationModal({ isOpen, onClose, preselectedService 
       `\u{1F6E0}\u{FE0F} *Service:* ${formData.service}\n` +
       `\u{1F3AF} *Goals:* ${formData.message || 'N/A'}`;
 
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=919361088012&text=${encodeURIComponent(text)}`;
     window.location.href = whatsappUrl;
   };
 
